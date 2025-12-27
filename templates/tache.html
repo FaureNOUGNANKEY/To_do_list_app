@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> {% block title  %} {{ tache['titre'] }} {% endblock %} </h1>
+    <hr color="green">
+    <p> {{ tache['description']}} </p>
+{% endblock %}

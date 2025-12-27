@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/style.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title> {% block title %} {% endblock %} </title>
+</head>
+<body bgcolor="blue">
+    <nav>
+        <div class="navbar bg-success">
+            <ul class="nav nav-tabs nav-pills bg-sucess">
+                <li class="nav-item ">
+                    <a class="nav-link active" aria-current="page" href=" {{url_for('index')}} ">taches</a>
+                </li>
+                <li>
+                    <a class="btn btn-primary" href="{{url_for('add')}}">Ajouter une tache</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br><br>
+    <div class="container d-flex justify-content-center align-items-center" style="width: 500px; border:2px solid green;"id="container">
+        <div class="text-center">
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+        {% block content %} {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

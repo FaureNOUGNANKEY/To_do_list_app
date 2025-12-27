@@ -1,0 +1,19 @@
+{% extends "base.html" %} 
+
+{% block content %}
+    <h1> <u>{% block title %} Liste de taches {% endblock %}</u> </h1> 
+    <div>
+        {% for tache in taches %}
+            <table>
+                <tr>
+                    <td><a href="{{url_for('tache', id_tache=tache['id'])}}"><h2> {{tache['titre']}} </h2></a></td>
+                    <td><span> {{tache['statut']}}</span></td>
+                    <td><a class="btn btn-warning" href="{{url_for('update',id_tache=tache['id'])}}">Modifier</a></td>
+                    <hr color="green">
+                </tr>
+            </table>
+    
+        {% endfor %}
+    </div>
+    
+{% endblock %}

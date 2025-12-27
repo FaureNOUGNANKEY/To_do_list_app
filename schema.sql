@@ -1,0 +1,7 @@
+DROP TABLE if EXISTS TACHES ;
+CREATE TABLE TACHES (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titre TEXT NOT NULL,
+    description TEXT NOT NULL,
+    statut TEXT NOT NULL CHECK(statut IN ('Terminee','En cours'))
+);

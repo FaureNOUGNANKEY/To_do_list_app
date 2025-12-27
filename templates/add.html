@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2> {% block title %} Ajouter une tache {% endblock %} </h2>
+    <hr color="green">
+    <form action="#" method="post">
+        <div>
+            <label for="titre">Titre</label>
+            <input type="text" name="titre" id="titre" placeholder="Titre de la tache" value="{{request.form['titre']}}">
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <textarea name="description" id="description" value="{{request.form['description']}}"placeholder="Description de la tache" cols="50" rows="5"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </div>
+          
+            
+    </form>
+    
+{% endblock %}
